@@ -1,7 +1,11 @@
 .container {
 	position: relative;
-
+	display: flex;
+	flex-direction: column;
 	width: 100%;
+	@media only screen and (min-width: 1024px) {
+		flex-direction: row;
+	}
 }
 
 .rounded-shape {
@@ -18,6 +22,12 @@
 		rgba(158, 58, 255, 1) 33%,
 		rgba(233, 66, 255, 1) 100%
 	);
+
+	@media only screen and (min-width: 1024px) {
+		width: 50%;
+		height: 70rem;
+		transform: translateX(-30%);
+	}
 }
 
 .smartphone {
@@ -32,6 +42,12 @@
 	height: 54rem;
 	background-color: $cl-white;
 	box-shadow: $drop-shadow;
+	@media only screen and (min-width: 768px) {
+		transform: translateY(3rem);
+	}
+	@media only screen and (min-width: 1024px) {
+		transform: translate(42%, 20%);
+	}
 
 	&__display {
 		overflow: hidden;
@@ -216,12 +232,13 @@
 		background: transparent;
 		border-radius: 50%;
 		border: 2px solid $cl-radio-button;
+		margin-right: 20px;
 	}
 
 	.text {
 		color: $cl-subheading;
 		font-size: 0.9rem;
-		margin-left: -35px;
+		margin-right: auto;
 	}
 
 	.price {
@@ -268,8 +285,48 @@
 	}
 }
 
-.title {
-	margin-top: 10rem;
-	text-align: center;
-	color: $cl-main-heading;
+.booking {
+	align-self: center;
+	@media only screen and (min-width: 1024px) {
+		max-width: 40%;
+		margin-top: 10%;
+		margin-left: 5rem;
+	}
+
+	.title {
+		margin-top: 12rem;
+		text-align: center;
+		color: $cl-main-heading;
+		font-size: 4rem;
+		font-weight: 700;
+		@media only screen and (min-width: 768px) {
+			margin-top: 6rem;
+			margin-bottom: 1rem;
+		}
+		@media only screen and (min-width: 1024px) {
+			text-align: left;
+		}
+	}
+
+	.subtitle {
+		color: $cl-submit-button;
+		font-size: 1.7rem;
+		text-align: center;
+		margin: 3rem;
+		line-height: 1.6;
+		@media only screen and (min-width: 768px) {
+			margin-top: 1rem;
+			margin-left: 10rem;
+			margin-right: 10rem;
+			line-height: 1.5;
+		}
+		@media only screen and (min-width: 1024px) {
+			text-align: left;
+			margin-left: 0;
+			margin-right: 5rem;
+		}
+		@media only screen and (min-width: 1300px) {
+			margin-right: 20rem;
+		}
+	}
 }

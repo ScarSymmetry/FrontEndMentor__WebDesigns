@@ -4,6 +4,12 @@ html {
   font-family: "Rubik", sans-serif;
 }
 
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 75%;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -14,7 +20,26 @@ body {
 
 .container {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .rounded-shape {
@@ -31,6 +56,16 @@ body {
   background: -webkit-linear-gradient(76deg, #8838ff 0%, #9e3aff 33%, #e942ff 100%);
   background: -o-linear-gradient(76deg, #8838ff 0%, #9e3aff 33%, #e942ff 100%);
   background: linear-gradient(14deg, #8838ff 0%, #9e3aff 33%, #e942ff 100%);
+}
+
+@media only screen and (min-width: 1024px) {
+  .rounded-shape {
+    width: 50%;
+    height: 70rem;
+    -webkit-transform: translateX(-30%);
+        -ms-transform: translateX(-30%);
+            transform: translateX(-30%);
+  }
 }
 
 .smartphone {
@@ -55,6 +90,22 @@ body {
   background-color: white;
   -webkit-box-shadow: 24px 31px 30px -2px rgba(34, 60, 80, 0.12);
           box-shadow: 24px 31px 30px -2px rgba(34, 60, 80, 0.12);
+}
+
+@media only screen and (min-width: 768px) {
+  .smartphone {
+    -webkit-transform: translateY(3rem);
+        -ms-transform: translateY(3rem);
+            transform: translateY(3rem);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .smartphone {
+    -webkit-transform: translate(42%, 20%);
+        -ms-transform: translate(42%, 20%);
+            transform: translate(42%, 20%);
+  }
 }
 
 .smartphone__display {
@@ -331,12 +382,13 @@ body {
   -webkit-border-radius: 50%;
           border-radius: 50%;
   border: 2px solid #e570ff;
+  margin-right: 20px;
 }
 
 .prices .text {
   color: #d89eff;
   font-size: 0.9rem;
-  margin-left: -35px;
+  margin-right: auto;
 }
 
 .prices .price {
@@ -399,9 +451,70 @@ body {
           transform: skew(-45deg);
 }
 
-.title {
-  margin-top: 10rem;
+.booking {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .booking {
+    max-width: 40%;
+    margin-top: 10%;
+    margin-left: 5rem;
+  }
+}
+
+.booking .title {
+  margin-top: 12rem;
   text-align: center;
   color: #3e2753;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 768px) {
+  .booking .title {
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .booking .title {
+    text-align: left;
+  }
+}
+
+.booking .subtitle {
+  color: #3e2753;
+  font-size: 1.7rem;
+  text-align: center;
+  margin: 3rem;
+  line-height: 1.6;
+}
+
+@media only screen and (min-width: 768px) {
+  .booking .subtitle {
+    margin-top: 1rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    line-height: 1.5;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .booking .subtitle {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 5rem;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .booking .subtitle {
+    margin-right: 20rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

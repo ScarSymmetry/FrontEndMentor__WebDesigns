@@ -24,6 +24,9 @@ $gradient-mag-purp: linear-gradient(
 html {
 	font-size: 62.5%; // 1rem = 10px  , 10/16
 	font-family: "Rubik", sans-serif;
+	@media only screen and (min-width: 768px) {
+		font-size: 75%;
+	}
 }
 
 body {
