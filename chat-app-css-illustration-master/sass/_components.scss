@@ -11,7 +11,13 @@
 	width: 100%;
 	height: 500px;
 	border-radius: 0% 0% 50% 50% / 10% 10% 50% 50%;
-	background: hsl(264, 100%, 61%);
+	background: rgb(136, 56, 255);
+	background: linear-gradient(
+		14deg,
+		rgba(136, 56, 255, 1) 0%,
+		rgba(158, 58, 255, 1) 33%,
+		rgba(233, 66, 255, 1) 100%
+	);
 }
 
 .smartphone {
@@ -23,18 +29,16 @@
 	transform: translateY(6.5rem);
 
 	width: 25rem;
-	height: 50rem;
-	background-color: hsl(0, 0%, 100%);
-	-webkit-box-shadow: 24px 31px 30px -2px rgba(34, 60, 80, 0.12);
-	-moz-box-shadow: 24px 31px 30px -2px rgba(34, 60, 80, 0.12);
-	box-shadow: 24px 31px 30px -2px rgba(34, 60, 80, 0.12);
+	height: 54rem;
+	background-color: $cl-white;
+	box-shadow: $drop-shadow;
 
 	&__display {
 		overflow: hidden;
 		width: 100%;
 		height: 100%;
 
-		background-color: hsl(270, 20%, 96%);
+		background-color: $cl-app-background;
 		border-radius: inherit;
 	}
 
@@ -44,7 +48,7 @@
 
 		width: 100%;
 		height: 65px;
-		background-color: hsl(264, 100%, 61%);
+		background: $gradient-top-app;
 		border-top-left-radius: 30px;
 		border-top-right-radius: 30px;
 		border-bottom-left-radius: 5px;
@@ -59,7 +63,7 @@
 		border-radius: 15px;
 		height: 35px;
 		width: 130px;
-		background-color: hsl(0, 0%, 100%);
+		background-color: $cl-white;
 		transform: translateY(-15px);
 	}
 
@@ -83,7 +87,7 @@
 		.chevron {
 			width: 2.5px;
 			height: 5px;
-			background-color: hsl(270, 20%, 96%);
+			background-color: $cl-app-background;
 		}
 	}
 
@@ -93,7 +97,7 @@
 		height: 25px;
 		width: 25px;
 		padding: 1px;
-		border: 1px solid white;
+		border: 1px solid $cl-white;
 		border-radius: 50%;
 
 		.avatar-img {
@@ -105,7 +109,7 @@
 	}
 
 	&__name {
-		color: hsl(270, 20%, 96%);
+		color: $cl-app-background;
 
 		.user-name {
 			margin: 0;
@@ -115,7 +119,7 @@
 		.user-status {
 			margin: 0;
 			font-size: 0.9rem;
-			color: hsl(276, 100%, 81%);
+			color: $cl-subheading;
 		}
 	}
 
@@ -125,20 +129,141 @@
 			margin: 1px;
 			width: 2px;
 			height: 2px;
-			background-color: hsl(0, 0%, 100%);
+			background-color: $cl-white;
 		}
 	}
 }
 
 .display-messages {
+	display: flex;
+	flex-direction: column;
+
 	&__box {
 		margin-left: 10px;
 		.sent-message {
-			color: hsl(276, 55%, 52%);
+			color: $cl-chat-on-left;
 			background-color: hsl(272, 41%, 93%);
 			width: max-content;
 			padding: 10px;
 			border-radius: 15px;
+		}
+	}
+
+	.dogs {
+		display: flex;
+		width: 100%;
+		justify-content: flex-end;
+		gap: 7px;
+		:nth-child(3) {
+			margin-right: 10px;
+		}
+
+		&__container {
+			width: 40px;
+			height: 40px;
+		}
+
+		.dog-picture {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			border-radius: 10px;
+		}
+	}
+}
+
+.messages-received {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: flex-end;
+	& > p {
+		margin: 0;
+	}
+	.received-message {
+		margin-top: 10px;
+		margin-right: 10px;
+		color: $cl-chat-on-right;
+		background-color: $cl-white;
+		width: max-content;
+		padding: 10px;
+		border-radius: 15px;
+	}
+}
+
+.prices {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
+	gap: 10px;
+
+	&__quotation {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: $cl-white;
+		border-radius: 10px;
+		border-bottom-left-radius: 5px;
+
+		width: 160px;
+		padding: 10px;
+		background: $gradient-mag-purp;
+	}
+
+	.circle {
+		width: 12px;
+		height: 12px;
+		background: transparent;
+		border-radius: 50%;
+		border: 2px solid $cl-radio-button;
+	}
+
+	.text {
+		color: $cl-subheading;
+		font-size: 0.9rem;
+		margin-left: -35px;
+	}
+
+	.price {
+		font-size: 1.3rem;
+		font-weight: bold;
+		margin-right: 5px;
+	}
+}
+
+.input-text {
+	margin: 15px auto;
+
+	border-radius: 20px;
+	display: flex;
+	width: 90%;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $cl-white;
+
+	&__message {
+		margin-left: 15px;
+		color: hsl(206, 6%, 79%);
+	}
+
+	&__send {
+		margin-right: 5px;
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		background-color: $cl-submit-button;
+
+		.smartphone__chevrons {
+			width: 100%;
+			height: 100%;
+			transform: translate(9px, 5px);
+
+			:first-child {
+				transform: skew(45deg);
+			}
+			:nth-child(2) {
+				transform: skew(-45deg);
+			}
 		}
 	}
 }
@@ -146,4 +271,5 @@
 .title {
 	margin-top: 10rem;
 	text-align: center;
+	color: $cl-main-heading;
 }
