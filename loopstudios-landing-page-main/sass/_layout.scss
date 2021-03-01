@@ -1,0 +1,36 @@
+$cl-white: hsl(0, 0%, 100%);
+$cl-black: hsl(0, 0%, 0%);
+$cl-grey: hsl(0, 0%, 55%);
+$cl-very-dark-grey: hsl(0, 0%, 41%);
+
+.container {
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	background-image: url("../images/mobile/image-hero.jpg");
+	background-color: #71153c;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+}
+
+.vr-leader {
+	margin-top: 10rem;
+	width: 100%;
+}
+
+.our-creations {
+	width: 100%;
+	margin-top: 2.5rem;
+}
+
+.footer {
+	width: 100%;
+	background-color: $cl-black;
+	padding-bottom: 5rem;
+}
