@@ -53,6 +53,7 @@ body.locked {
 	color: $cl-white;
 
 	@include media(">tablet") {
+		display: block;
 		position: relative;
 		transform: translateX(0);
 		z-index: 100;
